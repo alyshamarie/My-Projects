@@ -60,10 +60,10 @@
 
 - **nmap scanning (Light to heavy)**
 
-- `nmap -sn <subnet>` (sn = no port scan, just checking if hosts are alive).
+-`nmap -sn <subnet>` (sn = no port scan, just checking if hosts are alive).
 <img src="../_resources/fef1fe484b0bda96ff6334022eed4656.png" width="1000">
 
-- `nmap --top-ports 100 -sS -sV <win10>` Scoping, (sS = stealth, sV= service & version detection).
+-`nmap --top-ports 100 -sS -sV <win10>` Scoping, (sS = stealth, sV= service & version detection).
 <img src="../_resources/3c1494e4210525f359b99b7bf329319e.png" width="1000">
 
 - `nmap -sS -sV -O <win10>` Narrowing scope (O = OS detection).
