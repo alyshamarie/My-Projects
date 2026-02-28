@@ -41,12 +41,14 @@
 ## Wazuh agent (Windows 10)
 - I installed my agent on Windows 10 VM PS using this command provided by the Wazuh dashboard: ```Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.2-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER="10.0.2.15" WAZUH_AGENT_GROUP="default" WAZUH_AGENT_NAME="Windows10"```.
 <img src="../_resources/4cfd79e5da316f211c16bc7c537755ae.png" width="1000">
+
 - I encountered problems because when using VMs by default network settings they cannot see eachother, I created an isolated NAT Network on Virtualbox and added every machine to it so they can say hi. Additionally I enabled RDP, network discovery and enabled file and printer sharing rules in order for the lab to go more smoothly between machines (To me it's more about interacting with Wazuh than being a realistic break-in.)
 <img src="../_resources/56f656241aa3cb233daaecc289db9830.png" width="1000">
 <img src="../_resources/65537ea97b9c5c1cb1942801361bb099.png" width="1000">
 <img src="../_resources/38bf808e2b67f44aba02665f1be70880.png" width="1000">
 <img src="../_resources/189a9c37756743edb6c318c8d9d914a3.png" width="1000">
 <img src="../_resources/627a354de8af238529cb8626e7487e12.png" width="1000">
+
 - Then the Wazuh server address was incorrect that the agent was trying to connect to (No new agents showed on dashboard) so I went to the ossec file as admin in notepad and manually altered it from 0.0.0.0 to the correct IP.
 <img src="../_resources/d0337e3a1e7368ef1f2e0194dddd1d25.png" width="1000">
 <img src="../_resources/66fc69952c48c22a1d7fa51798151f9b.png" width="1000">
