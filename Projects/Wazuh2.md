@@ -30,7 +30,7 @@
 <img src="../_resources/96cbd2a597d7f2a55a029a25a0e819e6.png" width="1000">
 - Server and dashboard ready!
  <img src="../_resources/3e0bc5121ed17b60b9dc44213e1a768d.png" width="1000">
-  <img src="../_resources/f99a5c39cc0c2796da4391bc31470ff2.png" width="500">
+  <img src="../_resources/f99a5c39cc0c2796da4391bc31470ff2.png" width="1000">
 
   
 ### Wazuh agent (Windows 10)
@@ -45,7 +45,7 @@
 - Then the Wazuh server address was incorrect that the agent was trying to connect to (No new agents showed on dashboard) so I went to the ossec file as admin in notepad and manually altered it from 0.0.0.0 to the correct IP.
 <img src="../_resources/d0337e3a1e7368ef1f2e0194dddd1d25.png" width="1000">
 <img src="../_resources/66fc69952c48c22a1d7fa51798151f9b.png" width="1000">
-<img src="../_resources/5957556254dda52a1ed396ca85b1c4a7.png" width="1000">
+<img src="../_resources/5957556254dda52a1ed396ca85b1c4a7.png" width="500">
 
 ---
 ## MITRE Tactics Simulation
