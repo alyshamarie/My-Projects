@@ -327,5 +327,7 @@ The `Invoke-WebRequest` command and downloading winPEAS & the payload.
 - winPeas Windows Security block (temporarily disable realtime protection or create a bypass).
 - The additions required for a SIEM to fully function, for example we could not monitor various nmap scan noise levels on Wazuh and Sysmon alone, we would need something such as an IDS like Suricata.
 -  The scheduled tasks created too much noise eventually and drowned out the ability to see other MITRE tactic phases, so I had to delete them before the discovery phase, but on Wazuh you can also quite easily remove certain Event IDs.
+<br>
+I would love to next work on detection engineering and response by tweaking rules for certain scenarios!
 
 
