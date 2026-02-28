@@ -253,7 +253,6 @@ Some examples:
   <img src="../_resources/132b6c75bc170a49d10336a439946511.png" width="1000">
 This is how it looks beforehand.
 <img src="../_resources/b982ca95a5fb089c92cf1a251d6f28b1.png" width="1000">
-
 I added a weirdfile.txt to the folder, modified it and then deleted it with the following results:
 <img src="../_resources/1672c4b42993b4013295cbaa67c54ad8.png" width="1000">
 <img src="../_resources/88bce91e2d95f94f0cee5e80886d6aeb.png" width="1000">
