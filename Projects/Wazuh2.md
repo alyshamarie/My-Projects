@@ -227,6 +227,7 @@ Here we can see the output in the Kali terminal running the HTTP server.
  <img src="../_resources/ab7d0d33e4aea3c32c4e5ea7bb985644.png" width="1000">
 <img src="../_resources/4d498ad041c1a7d5a7440f9e59e67ed0.png" width="1000">
 
+---
 ### MITRE ATT&CK Timeline:
 *For the most part, Wazuh's MITRE dashboard showed the phases relatively well along my process. I learnt that the phases of attack are rarely going to be in perfect order and more a light semblence of it, for example alot of lateral movement techniques can be involved in persistence phases.*
 
@@ -239,6 +240,7 @@ Here we can see the output in the Kali terminal running the HTTP server.
 - Discovery & Lateral Movement Phases.
 <img src="../_resources/9359541ab23009b4aef5813b83a7d094.png" width="1000">
 
+---
 ## ossec.conf
 - I downloaded a better text editor (Sublime) and navigated to the ossec.conf directory in order to open it up and take a look. It is the main configuration file for Wazuh and you can alter things such as log colleciton, file integrity monitoring, vulnerability management and malware checks.
  <img src="../_resources/670d79df483afe8f3fccedf2deb4b559.png" width="1000">
