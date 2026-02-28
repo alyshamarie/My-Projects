@@ -1,4 +1,4 @@
-# 𑣲    : Wazuh MITRE Simulation
+# 𑣲    : Wazuh SIEM MITRE Simulation
 <img src="../_resources/cef78fb1a6c74f1eac6e21558a5a44e2.png" width="1000">
 
 **Contents:**
