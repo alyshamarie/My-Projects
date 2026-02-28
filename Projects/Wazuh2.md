@@ -58,8 +58,8 @@
 *Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*<br>
 **Active Scanning (T1595), Host discovery (T1018), Victim Network Information (T1590) & Victim Host Information (T1592):**
 
-- **nmap scanning (Light to heavy)**
-
+**nmap scanning (Light to heavy)**
+<br>
 - `nmap -sn <subnet>` (sn = no port scan, just checking if hosts are alive).
 <img src="../_resources/fef1fe484b0bda96ff6334022eed4656.png" width="1000">
 
