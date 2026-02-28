@@ -55,7 +55,7 @@
 
 
 ## (TA0043) Reconnaissance 
-<span style="color:red">*Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*</span>
+*Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*
 <br>
 **Active Scanning (T1595), Host discovery (T1018), Victim Network Information (T1590) & Victim Host Information (T1592):**
 
@@ -77,18 +77,23 @@
 <img src="../_resources/03d3973c5d7a434394d85d9baecc2284.png" width="1000">
 
 -  **SMB enumeration**
-  Resuming nmap, I first chose this command ``nmap -sC -p 139,445 -sV 10.0.2.30`` that runs nmap's default scripts to confirm if SMB is there and open and collect basic leaks. 
-  <img src="../_resources/02e8006efd33e1fd7f118854c6092e78.png)I then further added ``nmap -p 139,445 --script smb-protocols <target>`` to get the more accurate SMB versions (SMB1 being obscelete and vulnerable" width="1000">. It showed usage of SMB 2 and 3.
+  Resuming nmap, I first chose this command ``nmap -sC -p 139,445 -sV 10.0.2.30`` that runs nmap's default scripts to confirm if SMB is there and open and collect basic leaks.
+<img src="../_resources/02e8006efd33e1fd7f118854c6092e78.png" width="1000">
+I then further added ``nmap -p 139,445 --script smb-protocols <target>`` to get the more accurate SMB versions (SMB1 being obscelete and vulnerable" . It showed usage of SMB 2 and 3.
 <img src="../_resources/6129ef2b862b11879e974275addcac24.png" width="1000">
 
 - **Attacker POV**: nmap's 'open | filtered' response means it cannot determine if the port is open or filtered (firewall block). We can see 4 open TCP ports: `135` (RPC - Common Windows service communication),`139` (NetBIOS - File/printer sharing),`445` (SMB - File sharing, authentication, remote access) & `5357` (HTTP for Windows Web Services). For UDP only one certain open port `137` running netbios-ns (Registers and resolves local NetBIOS names to IP addresses). Most commonly the SMB `445` port would be further investigated becuase certain versions are historically vulnerable and it is often internally exposed which is great for credential abuse and lateral movement.
 
-- **Response:** Initially attempting these scans picked up no visibility in Wazuh (I learned they don't tend to generate any Windows Events and just send packet probes, and you would need an IDS like Suricata). For quick visibility I used Wireshark to show exactly what the stealth vs full connect scans do in terms of handshakes.
+**Response:** 
+<br>
+- Initially attempting these scans picked up no visibility in Wazuh (I learned they don't tend to generate any Windows Events and just send packet probes, and you would need an IDS like Suricata). For quick visibility I used Wireshark to show exactly what the stealth vs full connect scans do in terms of handshakes.
 Stealth:
 <img src="../_resources/aa2c52e34baa048487ede118604df0ad.png" width="1000">
-Full connect (of open ports 135,139,445,3389 & 5357):
+
+- Full connect (of open ports 135,139,445,3389 & 5357):
 <img src="../_resources/940392fa57f028bc54efdaba30717897.png" width="1000">
-Full connect (of 445 - 'SYN' from us, 'SYN,ACK' from target, 'ACK' from target & 'RST, ACK' from us):
+
+- Full connect (of 445 - 'SYN' from us, 'SYN,ACK' from target, 'ACK' from target & 'RST, ACK' from us):
 <img src="../_resources/b92031b63c0062d5fe818045dc1ed1c3.png" width="1000">
 
   I also installed Sysmon to make logs more substantial and sensitive. Wazuh has their own config file for sysmon and you just need to provide an output file: <img src="../_resources/3b08e001a217e71afe005e9c2dd83f24.png" width="1000">
