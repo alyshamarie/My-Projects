@@ -256,6 +256,8 @@ This is how it looks beforehand.
 I added a weirdfile.txt to the folder, modified it and then deleted it with the following results:
 <img src="../_resources/1672c4b42993b4013295cbaa67c54ad8.png" width="1000">
 <img src="../_resources/88bce91e2d95f94f0cee5e80886d6aeb.png" width="1000">
+
+---
 ## Challenges:
 - Certain arguably better custom Sysmon config files crashing Wazuh, in the end I just went for using Wazuh's recommended one but would like to look into others.
 - Hydra not working despite RDP and SMB clearly showing open with nmap. Used crackmap instead.
