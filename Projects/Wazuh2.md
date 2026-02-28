@@ -233,10 +233,13 @@ Here we can see the output in the Kali terminal running the HTTP server.
 
 - Initial Access and Privilege Escalation Phases.
 <img src="../_resources/2ed4fb5b07d3ddd6ea954d2cd6174dba.png" width="1000">
+
 - Persistance Phase (Triggered alot of lateral movement from the tool payload (.exe) transfers.)
 <img src="../_resources/457c5aa07c8d898901a6002c7b418a5b.png" width="1000">
+
 - Defence Evasion Phase.
 <img src="../_resources/000a725655cc711e26b77588739a304a.png" width="1000">
+
 - Discovery & Lateral Movement Phases.
 <img src="../_resources/9359541ab23009b4aef5813b83a7d094.png" width="1000">
 
