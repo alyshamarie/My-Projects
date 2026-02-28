@@ -14,11 +14,15 @@
 ---
 # VM Setups
 *Installing the ISO's into VirtualBox with their respective allocations and configs.*
+
 1. Ubuntu Linux Client (Wazuh server) - https://ubuntu.com/download/desktop.
 <img src="../_resources/1f60144415e7509ea95e7f65657f8ecf.png" width="1000">
+
 2. Windows 10 Client (Wazuh agent) - https://www.microsoft.com/en-us/software-download/windows10.
   <img src="../_resources/2519d2c109be53b2ed19df0e34dd3be4.png" width="1000">
+  
   - If you dont want to use the tool you can F12 the site -> toggle to device/mobile and get the ISO.
+
 3. Kali Linux Client (Malicious actor) - https://www.kali.org/get-kali/#kali-platforms.
   <img src="../_resources/4b332540d67febf61b9f3a8a9b199d34.png" width="1000">
 
