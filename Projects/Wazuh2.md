@@ -59,14 +59,19 @@
 **Active Scanning (T1595), Host discovery (T1018), Victim Network Information (T1590) & Victim Host Information (T1592):**
 
 - **nmap scanning (Light to heavy)**
+
 `nmap -sn <subnet>` (sn = no port scan, just checking if hosts are alive).
 <img src="../_resources/fef1fe484b0bda96ff6334022eed4656.png" width="1000">
+
 `nmap --top-ports 100 -sS -sV <win10>` Scoping, (sS = stealth, sV= service & version detection).
 <img src="../_resources/3c1494e4210525f359b99b7bf329319e.png" width="1000">
+
 `nmap -sS -sV -O <win10>` Narrowing scope (O = OS detection).
 <img src="../_resources/8ae17f374fe0137c474cd5c1feca4173.png" width="1000">
+
 `nmap -sU --top-ports 20 <target>` UDP Service check (sU = UDP scan).
 <img src="../_resources/46742c505a626819f776ae1e3637e02c.png" width="1000">
+
 `nmap -T4 -sS <win10>` Aggressive scan (T4 = Fast scan with many probes of default 1-1000)
 <img src="../_resources/03d3973c5d7a434394d85d9baecc2284.png" width="1000">
 
