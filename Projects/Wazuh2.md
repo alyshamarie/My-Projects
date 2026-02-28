@@ -11,7 +11,7 @@
 **Tool usage:** VirtualBox, Wazuh, CMD, PowerShell, Event Viewer, Sysmon, WinPEAS, Metasploit, freerdp3, nmap, crackmap (Hydra sub), msfvenom, Wireshark.
 
 ---
-## VM Setups
+# VM Setups
 *Installing the ISO's into VirtualBox with their respective allocations and configs.*
 1. Ubuntu Linux Client (Wazuh server) - https://ubuntu.com/download/desktop.
 <img src="../_resources/1f60144415e7509ea95e7f65657f8ecf.png" width="1000">
@@ -21,9 +21,9 @@
 3. Kali Linux Client (Malicious actor) - https://www.kali.org/get-kali/#kali-platforms.
   <img src="../_resources/4b332540d67febf61b9f3a8a9b199d34.png" width="1000">
 
-## Wazuh Setups
+# Wazuh Setups
 
-### Wazuh server (Ubuntu)
+## Wazuh server (Ubuntu)
 - On the Ubuntu machine I installed curl, then ran: ```curl -s0 https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a```.
 - There was a minimum hardware requirement failure and so I increased my CPUs to 2 on Virtualbox > Settings > System > Processors, and disk space increasing it first on my host with Command Prompt: ```VBoxManage modifymedium disk "PASTE_FULL_VDI_PATH_HERE" --resize 61440 ```  and then within the Ubuntu machine by downloading the Gparted GUI.
 <img src="../_resources/232786d6ad08181c4e4e415752401220.png" width="1000">
@@ -33,7 +33,7 @@
   <img src="../_resources/f99a5c39cc0c2796da4391bc31470ff2.png" width="1000">
 
   
-### Wazuh agent (Windows 10)
+## Wazuh agent (Windows 10)
 - I installed my agent on Windows 10 VM PS using this command provided by the Wazuh dashboard: ```Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.14.2-1.msi -OutFile $env:tmp\wazuh-agent; msiexec.exe /i $env:tmp\wazuh-agent /q WAZUH_MANAGER="10.0.2.15" WAZUH_AGENT_GROUP="default" WAZUH_AGENT_NAME="Windows10"```.
 <img src="../_resources/4cfd79e5da316f211c16bc7c537755ae.png" width="1000">
 - I encountered problems because when using VMs by default network settings they cannot see eachother, I created an isolated NAT Network on Virtualbox and added every machine to it so they can say hi. Additionally I enabled RDP, network discovery and enabled file and printer sharing rules in order for the lab to go more smoothly between machines (To me it's more about interacting with Wazuh than being a realistic break-in.)
@@ -48,12 +48,12 @@
 <img src="../_resources/5957556254dda52a1ed396ca85b1c4a7.png" width="500">
 
 ---
-## MITRE Tactics Simulation
+# MITRE Tactics Simulation
 - The Cyber Kill Chain and Diamond Model were each a bit too niche for this situation and so I decided to go with MITRE in terms of an industry default and non-linear framework. Choosing: Reconnaisance, Initial Access, Persistence, Privilege Escalation, Defence Evasion, Discovery, Lateral Movement & Command and Control. Other techniques were not as revelant to my setup or goals and would be more suited towards a pen-testing or larger enterprise simulation.
 <img src="../_resources/2de3e02c76b310a467c9662bf04952a1.png" width="1000">
 
 
-### (TA0043) Reconnaissance 
+## (TA0043) Reconnaissance 
 *Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*
 **Active Scanning (T1595), Host discovery (T1018), Victim Network Information (T1590) & Victim Host Information (T1592):**
 
@@ -97,7 +97,7 @@ A final step is adding Sysmon as a log source for Wazuh in the Wazuh ossec confi
 	<img src="../_resources/67a2a3aa9c8ebad8dd85aaf02c4e3898.png" width="1000">
 	<img src="../_resources/68a8893c12229eef1004ce27cd46cb56.png" width="1000">
 
-### (TA0001) Initial Access 
+## (TA0001) Initial Access 
 *Continuous or uncontinuous use of a primary foothold into a network.*
 **Brute force (T1110), Valid account use (T1078), Remote access via RDP (T1133):**
 -  An additional weak user was created through the Windows machine, and added to the RDP group.
@@ -124,7 +124,7 @@ I created a smaller 50 password attempt .txt file from Kali's provided rockyou l
 
 
   
-### (TA0004) Privilege Escalation 
+## (TA0004) Privilege Escalation 
 *Abusing things like system weaknesses / misconfigurations to vertically elevate current user permissions and ease future actions on objectives.*
 **Valid Accounts (T1078), Exploitation for Privilege Escalation (T1068), Create or Modify System Process (T1543), Hijack Execution Flow (T1574), Remote Services (T1021):**
 
@@ -147,7 +147,7 @@ The `Invoke-WebRequest` command and downloading winPEAS & the payload.
   <img src="../_resources/8a586b8d34a03bbd6cf3f9d71d349b3a.png" width="1000">
  <img src="../_resources/1521561ad26f64a1ca0ed78e9cf80d4b.png" width="1000">
  
-### (TA0003) Persistence
+## (TA0003) Persistence
 *Maintaining this foothold through persistant means.*
 **Scheduled Tasks/Jobs (T1053), Boot or Logon Autostart Execution (T1547), Account Creation (T1136), Downloading Payloads (T1105),Remote Services (T1021):**
 
@@ -170,7 +170,7 @@ Then here is the admin creation and scheduled task:
 <img src="../_resources/e797b9056dac8d1b0e7b4f1499440a5b.png" width="1000">
  
  
-### (TA0005) Defence Evasion 
+## (TA0005) Defence Evasion 
 *Disabling, encryption and obsfucation techniques in order to avoid detection.*
 **Masquerading (T1036), Impair Defenses (T1562), Obfuscated Files or Information (T1027):**
 
@@ -181,7 +181,7 @@ Then here is the admin creation and scheduled task:
 - **Response:**
   <img src="../_resources/1dbf3ae64aba4cf7d646b6b08a067bef.png" width="1000">
   
-### (TA0007) Discovery & (TA0008) Lateral Movement
+## (TA0007) Discovery & (TA0008) Lateral Movement
 *Reconaissance of the compromised environment relating to the end-objective rather than sole initial access & Abuse of techniques fueled by discovery to move horizontally through systems in a network and follow through on the primary objective.*
 **System Information Discovery (T1016), Network Service Scanning (T1082), Security Software Discovery (T1063), System Service Discovery (T1007), Account Discovery (T1087), Lateral Movement (TA0008), Remote Services (T1021):**
 
@@ -210,7 +210,7 @@ Wazuh shows the exact CMD Prompts.
 <img src="../_resources/c782d8e15d7ad8ebca51acd9e9e4229a.png" width="1000">
 
   
-### (TA0011) Command and Control 
+## (TA0011) Command and Control 
 *Adversary communication and control of compromised systems, with various levels of obsfucation.*
 **Application Layer Protocol (T1071), Web Protocols (T1071.001),Command and Scripting Interpreter (T1059):**
 
@@ -231,7 +231,7 @@ Wazuh shows the exact CMD Prompts.
 <img src="../_resources/4d498ad041c1a7d5a7440f9e59e67ed0.png" width="1000">
 
 ---
-### MITRE ATT&CK Timeline:
+# MITRE ATT&CK Timeline:
 - For the most part, Wazuh's MITRE dashboard showed the phases relatively well along my process. I learnt that the phases of attack are rarely going to be in perfect order and more a light semblence of it, for example alot of lateral movement techniques can be involved in persistence phases.
 
 - Initial Access and Privilege Escalation Phases.
@@ -247,7 +247,7 @@ Wazuh shows the exact CMD Prompts.
 <img src="../_resources/9359541ab23009b4aef5813b83a7d094.png" width="1000">
 
 ---
-## ossec.conf
+# ossec.conf
 - I downloaded a better text editor (Sublime) and navigated to the ossec.conf directory in order to open it up and take a look. It is the main configuration file for Wazuh and you can alter things such as log colleciton, file integrity monitoring, vulnerability management and malware checks.
  <img src="../_resources/670d79df483afe8f3fccedf2deb4b559.png" width="1000">
 Some examples:
@@ -264,7 +264,7 @@ I added a weirdfile.txt to the folder, modified it and then deleted it with the 
 <img src="../_resources/88bce91e2d95f94f0cee5e80886d6aeb.png" width="1000">
 
 ---
-## Challenges:
+# Challenges:
 - Certain arguably better custom Sysmon config files crashing Wazuh, in the end I just went for using Wazuh's recommended one but would like to look into others.
 - Hydra not working despite RDP and SMB clearly showing open with nmap. Used crackmap instead.
 -  Dynamic IP reassignment caused agents to become disconnected sometimes at the start.
