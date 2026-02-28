@@ -229,7 +229,7 @@ Here we can see the output in the Kali terminal running the HTTP server.
 
 ---
 ### MITRE ATT&CK Timeline:
-*For the most part, Wazuh's MITRE dashboard showed the phases relatively well along my process. I learnt that the phases of attack are rarely going to be in perfect order and more a light semblence of it, for example alot of lateral movement techniques can be involved in persistence phases.*
+- For the most part, Wazuh's MITRE dashboard showed the phases relatively well along my process. I learnt that the phases of attack are rarely going to be in perfect order and more a light semblence of it, for example alot of lateral movement techniques can be involved in persistence phases.
 
 - Initial Access and Privilege Escalation Phases.
 <img src="../_resources/2ed4fb5b07d3ddd6ea954d2cd6174dba.png" width="1000">
@@ -253,6 +253,7 @@ Some examples:
   <img src="../_resources/132b6c75bc170a49d10336a439946511.png" width="1000">
 This is how it looks beforehand.
 <img src="../_resources/b982ca95a5fb089c92cf1a251d6f28b1.png" width="1000">
+
 I added a weirdfile.txt to the folder, modified it and then deleted it with the following results:
 <img src="../_resources/1672c4b42993b4013295cbaa67c54ad8.png" width="1000">
 <img src="../_resources/88bce91e2d95f94f0cee5e80886d6aeb.png" width="1000">
