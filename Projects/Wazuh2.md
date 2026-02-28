@@ -121,15 +121,18 @@ Stealth:
 *Continuous or uncontinuous use of a primary foothold into a network.*
 <br>
 **Brute force (T1110), Valid account use (T1078), Remote access via RDP (T1133):**
+
 -  An additional weak user was created through the Windows machine, and added to the RDP group.
   <img src="../_resources/f7a7585cfced3d2ac4eed49a8512d1f9.png" width="1000">
   <img src="../_resources/38e6e0740f53843637451ddca1a9e54e.png" width="1000">
+  
 - Hydra did not work with RDP or SMB brute forcing so I instead used crackmap. I created a smaller 50 password attempt .txt file (small.txt) from Kali's provided rockyou list, and made crackmap run for the target. `smb` is targeting the SMB service on the provided IP, `-u` the username and `-p` the inputted password list.
   <img src="../_resources/ea1c872e650d11829c282e2794cd2241.png" width="1000">
   
 - I created a smaller 50 password attempt .txt file from Kali's provided rockyou list, and made crackmap run for the target. Then I attempted the password I knew was correct and established a successful connection:
 <img src="../_resources/e56adfb5e43729e7892f7fda6dafa6db.png" width="1000">
   <img src="../_resources/142804914dbe08ff8bf8672e03122b09.png" width="1000">
+  
 **Response:**
   <br>
 - This generated alot of noise on Wazuh.
