@@ -30,7 +30,7 @@
 <img src="../_resources/96cbd2a597d7f2a55a029a25a0e819e6.png" width="1000">
 - Server and dashboard ready!
  <img src="../_resources/3e0bc5121ed17b60b9dc44213e1a768d.png" width="1000">
-  <img src="../_resources/f99a5c39cc0c2796da4391bc31470ff2.png" width="1000">
+  <img src="../_resources/f99a5c39cc0c2796da4391bc31470ff2.png" width="500">
 
   
 ### Wazuh agent (Windows 10)
