@@ -1,3 +1,3 @@
 # My-Projects
 
-## Wazuh Detection
+## [Wazuh Detection](wazuh-detection.md)
