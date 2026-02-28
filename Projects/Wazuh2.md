@@ -1,5 +1,6 @@
 # 𑣲    : Wazuh Detection
 <img src="../_resources/cef78fb1a6c74f1eac6e21558a5a44e2.png" width="1000">
+
 **Contents:**
 1. VM Setups.
 2. Wazuh Setup.
