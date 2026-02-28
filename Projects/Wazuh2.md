@@ -55,7 +55,7 @@
 
 
 ## (TA0043) Reconnaissance 
-*Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*
+*Active or passive information gathering that may support things such as targeting, initial access and future actions of the malicious user.*<br>
 **Active Scanning (T1595), Host discovery (T1018), Victim Network Information (T1590) & Victim Host Information (T1592):**
 
 - **nmap scanning (Light to heavy)**
