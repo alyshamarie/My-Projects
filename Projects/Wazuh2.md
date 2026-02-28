@@ -213,11 +213,14 @@ Wazuh shows the exact CMD Prompts.
 ### (TA0011) Command and Control 
 *Adversary communication and control of compromised systems, with various levels of obsfucation.*
 **Application Layer Protocol (T1071), Web Protocols (T1071.001),Command and Scripting Interpreter (T1059):**
+
 - We are going to start a server on Kali and get the victim machine to ping back some information on a regular basis.
 <img src="../_resources/0cad8f713c41e759b48a6ea35387c0d3.png" width="1000">
-This PS script creates an infininte loop every 60 seconds `while ($true) { ... }` (later paired with `Start-Sleep 60`). We first create the variables =  `$time`, `$user`, `$ip`, `$procs` (processes), `$ports` & `$logins` (reads the log file made earlier that notes login time to a .txt file each startup). Then call them each within the multi-line string `$body = @`. We then send a HTTP request to the Kali server address that includes the data within the URL `?data=`.
+
+- This PS script creates an infininte loop every 60 seconds `while ($true) { ... }` (later paired with `Start-Sleep 60`). We first create the variables =  `$time`, `$user`, `$ip`, `$procs` (processes), `$ports` & `$logins` (reads the log file made earlier that notes login time to a .txt file each startup). Then call them each within the multi-line string `$body = @`. We then send a HTTP request to the Kali server address that includes the data within the URL `?data=`.
 <img src="../_resources/e3d552e0086a0c4371ba80296b6a3801.png" width="1000">
-Here we can see the output in the Kali terminal running the HTTP server.
+
+- Here we can see the output in the Kali terminal running the HTTP server.
 <img src="../_resources/a108e17cc2e920175586f40d6c1b57f5.png" width="1000">
 
 - **Response:**
